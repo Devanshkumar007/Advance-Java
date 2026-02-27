@@ -1,5 +1,8 @@
 package com.lpu.model;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import jakarta.persistence.Cacheable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +12,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="Student")
+@Cacheable
+@org.hibernate.annotations.Cache(
+    usage = CacheConcurrencyStrategy.READ_WRITE
+)
 public class Student{
 	
 	@Id

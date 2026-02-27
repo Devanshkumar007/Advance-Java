@@ -46,7 +46,7 @@ public class CRUD {
         Session session = sf.openSession();
 
         try {
-            Query<Student> q = session.createQuery("from Student", Student.class);
+            Query<Student> q = session.createQuery("seelct s from Student s", Student.class);
             List<Student> list = q.list();
 
             if (list.isEmpty()) {
